@@ -10,7 +10,11 @@ public class UserNameCheckProvider implements AuthenticationProvider {
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-		throw new UserNameForbiddenException("user name is forbidden");
+	    String userName = (String)authentication.getPrincipal();
+	    if (userName.startsWith("fuck")) {
+            throw new UserNameForbiddenException("user name is forbidden");
+        }
+        return authentication;
 	}
 
 	@Override

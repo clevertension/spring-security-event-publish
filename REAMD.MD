@@ -1,0 +1,1 @@
+when i type user/nopass to login, it should throw two failure exception(AuthenticationFailureBadCredentialsEvent, UserNameForbiddenException), but only **UserNameForbiddenException**
